@@ -19,3 +19,9 @@ void loop() {
 
 //Projeto Digistump
 https://github.com/digistump/DigistumpArduino
+
+//Configuração IDE Arduino
+https://digistump.com/wiki/digispark/tutorials/connecting
+
+//Drivers
+https://github.com/digistump/DigistumpArduino/releases
